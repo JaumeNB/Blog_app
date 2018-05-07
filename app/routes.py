@@ -10,23 +10,13 @@ from app.forms import LoginForm, PostForm
 from app.models import Blogpost, Editors, Messages, Logins
 import os
 
+"""-----------------ROUTES-----------------"""
+
+"""decorator executed before every view request"""
 @app.before_request
 def before_request():
     #returns the selected language and locale for a given request
     g.locale = str(get_locale())
-
-"""html test"""
-@app.route('/html_test')
-def html_test():
-
-    header = {
-                "title" : "About Me",
-                "subtitle" : "This is what I do.",
-                "image_path" : "about-bg.jpg",
-                "needed" : True
-    }
-
-    return render_template('html_test.html', header = header)
 
 """INDEX"""
 @app.route('/')
@@ -263,8 +253,6 @@ def add():
 
         #redirect to index
         return redirect(url_for('manage'))
-
-
 
     return render_template('add.html', form = form, header = header)
 

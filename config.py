@@ -1,13 +1,6 @@
 import os
-from dotenv import load_dotenv
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
-
-# application imports the variables in this file when it starts
-# there is no need to have all these variables manually set by you.
-load_dotenv(os.path.join(APP_DIR, '.env'))
-
-# Unfortunately, these environment variables have to be defined
-# because these are needed very early in the application bootstrap process
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 #   export FLASK_APP=blogapp.py
 #   export FLASK_DEBUG=1
@@ -18,5 +11,9 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     POSTS_PER_PAGE = 2
     LANGUAGES = ['en', 'es']
-    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY = 'supercalifragilisticoespialidoso'
+    CKEDITOR_FILE_UPLOADER = 'upload'
+    UPLOADED_PATH = os.path.join(basedir, 'app/uploads')
+    CKEDITOR_SERVE_LOCAL = True
+    CKEDITOR_HEIGHT = 600
+    CKEDITOR_PKG_TYPE = 'full'

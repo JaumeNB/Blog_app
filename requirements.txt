@@ -5,7 +5,6 @@ BeautifulSoup==3.2.1
 blinker==1.4
 click==6.7
 decorator==4.3.0
-elasticsearch==6.2.0
 enum34==1.1.6
 Flask==0.12.2
 Flask-Babel==0.11.2
