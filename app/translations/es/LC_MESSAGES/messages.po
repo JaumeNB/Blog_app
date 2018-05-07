@@ -1,0 +1,107 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2018-05-04 17:00+0200\n"
+"PO-Revision-Date: 2018-05-04 12:24+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.3\n"
+
+#: app/__init__.py:31
+msgid "Please log in to access this page."
+msgstr "Introduzca sus credenciales"
+
+#: app/forms.py:17
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: app/forms.py:18
+msgid "Password"
+msgstr "Contraseña"
+
+#: app/routes.py:37
+msgid "A Blog for Makers"
+msgstr "Un Blog para Makers"
+
+#: app/routes.py:72
+msgid "About Me"
+msgstr "Sobre mi"
+
+#: app/routes.py:73
+msgid "This is what I do."
+msgstr "Este soy yo"
+
+#: app/routes.py:85
+msgid "Contact me"
+msgstr "Ponte en contacto"
+
+#: app/routes.py:86
+msgid "We are just one click away!"
+msgstr "Solo nos separa un click!"
+
+#: app/templates/contact.html:9
+msgid ""
+"Want to get in touch? Fill out the form below to send me a message and I "
+"will get back to you as soon as possible!"
+msgstr ""
+"Quieres ponerte en contacto conmigo? Rellena el siguiente formulario para"
+" enviarme un mensaje directamente. Te responderé en cuanto pueda!"
+
+#: app/templates/contact.html:14 app/templates/contact.html:15
+msgid "Name"
+msgstr "Nombre"
+
+#: app/templates/contact.html:21
+msgid "Email Address"
+msgstr "Correo"
+
+#: app/templates/contact.html:22
+msgid "Email"
+msgstr "Correo"
+
+#: app/templates/contact.html:28 app/templates/contact.html:29
+msgid "Message"
+msgstr "Mensaje"
+
+#: app/templates/contact.html:36
+msgid "Send"
+msgstr "Enviar"
+
+#: app/templates/index.html:22
+msgid "Posted by"
+msgstr "Publicado por"
+
+#: app/templates/index.html:24
+msgid "on"
+msgstr "el"
+
+#: app/templates/index.html:40
+msgid "Previous"
+msgstr "Previo"
+
+#: app/templates/index.html:47
+msgid "Next"
+msgstr "Siguiente"
+
+#: app/templates/includes/_navbar.html:12
+msgid "Home"
+msgstr "Inicio"
+
+#: app/templates/includes/_navbar.html:15
+msgid "About"
+msgstr "Sobre mi"
+
+#: app/templates/includes/_navbar.html:18
+msgid "Contact"
+msgstr "Contacto"

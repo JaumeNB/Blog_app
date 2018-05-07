@@ -1,0 +1,75 @@
+<!-- Basic skeleton for all the web pages-->
+<!-- modular approach in which layout is the common part
+and all the templates will be modules in the body of this layout-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static', filename = 'Bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS fonts for this template -->
+    <link href="{{url_for('static', filename = 'fonts/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+
+    <!-- Custom clean-blog CSS styles for this template -->
+    <link href="{{url_for('static', filename = 'clean-blog/clean-blog.css')}}" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS styles for this template -->
+    <link href="{{url_for('static', filename = 'css/layout.css')}}" rel="stylesheet" type="text/css">
+
+    <!-- Google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    {{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
+    {{ moment.lang(g.locale) }}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Self-Engineer - A blog for makers</title>
+
+  </head>
+
+  <body>
+
+    <!-- Include the navbar-->
+    {% include 'includes/_navbar.html' %}
+
+    <!-- Include the navbar-->
+    {% include 'includes/_header.html' %}
+
+    <!-- flash messages-->
+    {% if "dashboard_flash" not in header %}
+      {% include 'includes/_messages.html' %}
+    {% endif %}
+
+    <!-- placeholder for content of each template-->
+    {% block body %}{% endblock %}
+
+    <!-- Include the footer-->
+    {% include 'includes/_footer.html' %}
+
+    <!-- JQuery-->
+    <script src="{{url_for('static', filename = 'js/jquery.min.js')}}"></script>
+
+    <!-- Bootstrap dependencies: Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{url_for('static', filename = 'Bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    <!-- Custom js scripts for this template -->
+    <script src="{{url_for('static', filename = 'clean-blog/clean-blog.js')}}"></script>
+
+    <!-- script to activate nav items -->
+    <script>
+      $(document).ready(function () {
+      $("#{{request.endpoint}}").addClass("active"); })
+    </script>
+
+  </body>
+
+</html>

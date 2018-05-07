@@ -1,0 +1,17 @@
+/*footer styling*/
+#footer{
+	width: 100%;													/*all width*/
+	padding-top: 15px;										/*set top padding*/
+	padding-bottom: 15px;									/*set bottom padding*/
+}
+
+/*hover over contact link and social network logos*/
+#social_network_logo:hover,
+#contact_us:hover{
+	text-decoration: none;
+}
+
+/*awesome icons styling*/
+.fa{
+	padding: 15px;
+}

@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/index.css') }}">
+
+    <!-- Main Content -->
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          {% for post in posts %}
+          <div class="post-preview">
+            <a href="{{ url_for('post', post_id = post.id)}}">
+              <h2 class="post-title">
+                {{ post.title }}
+              </h2>
+              <h3 class="post-subtitle">
+                {{ post.subtitle }}
+              </h3>
+            </a>
+            <p class="post-meta">{{ _('Posted by') }}
+              <a href="{{ url_for('about')}}">{{ post.author }}</a>
+              {{ _('on') }} {{moment(post.date_posted).format('LL')}}</p>
+          </div>
+          {% endfor %}
+          <hr>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <nav class="col-lg-8 col-md-10 mx-auto">
+          <ul class="pagination">
+            {% if prev_url %}
+            <li class="page-item">
+            {% else %}
+            <li class="page-item disabled">
+            {% endif %}
+              <a class="page-link" href="{{ prev_url }}" tabindex="-1">{{_('Previous')}}</a>
+            </li>
+            {% if next_url %}
+            <li class="page-item">
+            {% else %}
+            <li class="page-item disabled">
+            {% endif %}
+              <a class="page-link" href="{{ next_url }}">{{_('Next')}}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+    {% endblock %}

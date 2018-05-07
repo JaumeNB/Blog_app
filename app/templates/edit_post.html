@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% from "includes/_formhelpers.html" import render_field %}
+
+{% block body %}
+
+<!-- Include the navbar-->
+{% include 'includes/_dashboard_nav.html' %}
+
+<!-- Include CK Editor-->
+{{ ckeditor.load() }}
+{{ ckeditor.load_code_theme() }}
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h1>Edit post</h1>
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            {{render_field(form.title, class_="form-control", placeholder = "title")}}
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            {{render_field(form.subtitle, class_="form-control", placeholder = "subtitle")}}
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            {{render_field(form.author, class_="form-control", placeholder = "author")}}
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            {{render_field(form.content, id="editor", placeholder = "content")}}
+          </div>
+          <!--<script>
+          /*
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace( 'editor',{
+              height: '500',
+              extraPlugins: 'codesnippet',
+              codeSnippet_theme: 'monokai_sublime'//,
+              //codeSnippet_languages : {
+              //                            python: 'Python'
+              //                        }
+            } );
+            */
+          </script>-->
+        </div>
+        <br>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit"> Save changes </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{ ckeditor.config(name='content') }}
+
+{% endblock %}

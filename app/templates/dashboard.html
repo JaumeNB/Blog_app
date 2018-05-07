@@ -1,0 +1,102 @@
+{% extends 'layout.html' %}
+{% from "includes/_formhelpers.html" import render_field %}
+
+{% block body %}
+
+<script src="{{url_for('static', filename = 'js/Chart.min.js')}}"></script>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+<!-- Include the navbar-->
+{% include 'includes/_dashboard_nav.html' %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-6 col-md-6" id="table_container">
+      <hr>
+        <table class="table table-striped">
+          <tr>
+            <th>ID</th>
+            <th>Timestamp</th>
+            <th>Editor</th>
+          </tr>
+          {% for login in logins %}
+            <tr>
+              <td>{{login.id}}</td>
+              <td>{{moment(login.timestamp).format('LLL')}}</td>
+              <td>{{login.login.name}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+      </div>
+
+      <div class="col-lg-6 col-md-6">
+        <canvas id="chart" width="600" height="400"></canvas>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+<script>
+
+  // Global parameters:
+  // do not resize the chart canvas when its container does (keep at 600x400px)
+  Chart.defaults.global.responsive = false;
+
+   // Defines chart parameters and data
+   var chartData = {
+   labels : [{% for item in labels %}
+              "{{item}}",
+            {% endfor %}],
+   datasets : [
+      {
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{% for item in values %}
+                      {{item}},
+                    {% endfor %}]
+      }]
+   }
+
+    Chart.defaults.global.animationSteps = 50;
+    Chart.defaults.global.tooltipYPadding = 16;
+    Chart.defaults.global.tooltipCornerRadius = 0;
+    Chart.defaults.global.tooltipTitleFontStyle = "normal";
+    Chart.defaults.global.tooltipFillColor = "rgba(0,0,0,0.8)";
+    Chart.defaults.global.animationEasing = "easeOutBounce";
+    Chart.defaults.global.responsive = false;
+    Chart.defaults.global.scaleLineColor = "black";
+    Chart.defaults.global.scaleFontSize = 16;
+
+   // Gets the HTML canvas element
+   var mychart = document.getElementById("chart").getContext("2d");
+
+   steps = 10
+   max = 10
+
+   // Creates the chart to be displayed in the canvas element
+   var LineChartDemo = new Chart(mychart).Line(chartData, {
+        scaleOverride: true,
+        scaleSteps: steps,
+        scaleStepWidth: Math.ceil(max / steps),
+        scaleStartValue: 0,
+        scaleShowVerticalLines: true,
+        scaleShowGridLines : true,
+        barShowStroke : true,
+        scaleShowLabels: true,
+        bezierCurve: false,
+
+   });
+
+
+</script>
+
+{% endblock %}

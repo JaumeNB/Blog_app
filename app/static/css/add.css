@@ -1,0 +1,25 @@
+h1{
+  text-align: center;
+}
+
+
+#publish_button{
+  margin-top: 5px;                    /*set top margin*/
+  margin-bottom: 25px;                /*set margin bottom*/
+  background-color: #0066ff;          /*set background color*/
+  color: #FFF;                        /*set font color*/
+  padding: 7px 14px;                  /*set padding*/
+  border-radius: 5px;                 /*set border radius*/
+  border-bottom: 4px solid #003d99;   /*set bottom border*/
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+
+/*when hovering the button*/
+#publish_button:hover, #publish_button:focus {
+  background-color: #003d99;          /*set background color*/
+  border-bottom: 4px solid #003d99;   /*set bottom border color*/
+  color: #FFF;                        /*set font color*/
+}
