@@ -4,6 +4,9 @@
 /logs
 /migrations
 /Posts
+/app/static/img
+/app/uploads
+/app/translations/es/LC_MESSAGES
 .env
 babel.cfg
 *.pyc
