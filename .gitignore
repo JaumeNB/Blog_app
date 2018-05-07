@@ -6,3 +6,4 @@
 /Posts
 .env
 babel.cfg
+*.pyc
