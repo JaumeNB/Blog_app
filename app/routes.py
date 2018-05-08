@@ -1,5 +1,4 @@
 from app import app, db, moment, ckeditor
-from models import Blogpost, Messages, Editors, Logins
 from flask import render_template, request, redirect, url_for, session, flash, Markup, g, send_from_directory
 from forms import PostForm, LoginForm
 from datetime import datetime, date
