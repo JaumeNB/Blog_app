@@ -1,7 +1,7 @@
 /venv
-/DB/blog.db
-/migrations/versions/*
-/app/uploads/*
+/DB/*.db
+/migrations/versions/*.py
+/app/uploads/*.jpg
 /logs
 /certs
 *.pyc
