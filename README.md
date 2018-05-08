@@ -28,7 +28,15 @@
 - reload nginx service (sudo service nginx reload)
 - create the DB (blog.db in /DB)
 - Access virtual environment  to create the tables with migrate (flask shell, flask db migrate, flask db upgrade)
-- add an editor to the DB from the server to be able to login, create, edit and delete posts (flask shell, create editor and set password)
+- add an editor to the DB from the server to be able to login, create, edit and delete posts:
+
+    - flask shell
+    - editor = Editors(name = 'name', username = 'username')
+    - db.session.add(editor)
+    - db.session.commit()
+    - editor.set_password('password')
+    - db.session.commit()
+
 - connect to the IP address or domain name and enjoy!
 
 If you have any doubt, please refer to this excellent post:
