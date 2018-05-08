@@ -1,4 +1,7 @@
-/BlogAppVirtualEnvironment
+/venv
+/DB/blogapp.db
+/migrations/versions/*
+/app/uploads
 /logs
-/Posts
+/certs
 *.pyc
