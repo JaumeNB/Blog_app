@@ -1,4 +1,4 @@
-#This is a blog application built with flask
+# This is a blog application built with flask
 
 Main functionalities:
 

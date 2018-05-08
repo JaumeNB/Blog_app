@@ -1,1 +1,1 @@
-#Here the database: blog.db
+# Here the database: blog.db
