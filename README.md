@@ -13,9 +13,8 @@
 
 - connect to a server by ssh (e.g. Ubuntu cloud server or Ubuntu Virtual Machine)
 - install base dependencies(sudo apt-get -y install): python3, python3-venv, python3-dev, supervisor, nginx, git, sqlite
-- create the folder where you want this app to be (e.g. makedir blogapp)
-- go to this folder (cd blogapp)
 - clone this repository (git clone https://github.com/theselfengineer/blogapp)
+- go to the blogapp folder (cd blogapp)
 - create the virtual environment (python3 -m venv venv)
 - log into the virtual environment created (source venv/bin/activate)
 - install all the requirements (pip install -r requirements.txt)
