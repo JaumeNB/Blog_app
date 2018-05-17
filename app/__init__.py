@@ -28,7 +28,7 @@ app.config.from_object(Config)
 #heroku LOG
 if app.config['LOG_TO_STDOUT']:
     stream_handler = logging.StreamHandler()
-    stream_handler.setLevel(logging.INFO)
+    stream_handler.setLevel(logging.ERROR)
     app.logger.addHandler(stream_handler)
 
 """DATABASE INITIALIZATION"""
