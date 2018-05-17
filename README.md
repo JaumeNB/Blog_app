@@ -2,12 +2,12 @@
 
 # Main functionalities:
 
-- Create blogposts with a rich editor (CKEditor) and uploading pictures/GIFs
-- Save blogposts to DB with SQLAlchemy (SQLite or PostgreSQL engines)
+- Create blogposts with a rich editor (CKEditor) and upload pictures/GIFs
+- Save blogposts to DB with SQLAlchemy (SQLite, MySQL or PostgreSQL engines)
 - Edit blogposts
 - Delete blogposts
-- Search blogposts by keywords with ElasticSearch
 - Admin page
+- Multilingual (currently spanish and italian)
 
 # Usage:
 
@@ -52,7 +52,12 @@ https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deploymen
 - upgrade the translations (flask translate compile)
 - start a new server (sudo supervisorctl start blogapp)
 
+# Future improvements
 
+- Add article tags
+- Add post search by tags
+- Add post search by content
+- Add multilingual support for posts
 
 
 
