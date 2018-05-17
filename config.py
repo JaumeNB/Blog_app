@@ -17,3 +17,4 @@ class Config(object):
     CKEDITOR_SERVE_LOCAL = True
     CKEDITOR_HEIGHT = 600
     CKEDITOR_PKG_TYPE = 'full'
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
