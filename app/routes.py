@@ -179,7 +179,7 @@ def dashboard():
     for login in logins:
 
         parsed_date = datetime.strptime(str(login.timestamp),'%Y-%m-%d %H:%M:%S.%f')
-        formated_date = parsed_date.strftime('%m/%d/%Y')
+        formated_date = parsed_date.strftime('%d/%m/%Y')
 
         if formated_date in counter:
             counter[formated_date] += 1

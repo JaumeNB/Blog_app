@@ -25,12 +25,6 @@ login.login_message = _l('Please log in to access this page.')
 """CONFIGURATION FILE"""
 app.config.from_object(Config)
 
-#heroku LOG
-if app.config['LOG_TO_STDOUT']:
-    stream_handler = logging.StreamHandler()
-    stream_handler.setLevel(logging.ERROR)
-    app.logger.addHandler(stream_handler)
-
 """DATABASE INITIALIZATION"""
 #necessary to make database migration work
 naming_convention = {
