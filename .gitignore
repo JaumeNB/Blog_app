@@ -2,6 +2,8 @@
 /DB/*.db
 /migrations/versions/*.py
 /app/uploads/*.jpg
+/app/static/img/*.jpg
 /logs
 /certs
 *.pyc
+/static
