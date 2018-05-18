@@ -24,7 +24,7 @@ def index():
     header = {
                 "title" : "The Self Engineer",
                 "subtitle" : _('A Blog for Makers'),
-                "image_path" : "index-bg.jpg",
+                "image_path" : "index_bg.jpg",
                 "needed" : True
     }
 
@@ -60,7 +60,7 @@ def about():
     header = {
                 "title" : _('About Me'),
                 "subtitle" : _('This is what I do.'),
-                "image_path" : "about-bg.jpg",
+                "image_path" : "about_bg.jpg",
                 "needed" : True
     }
 
@@ -73,7 +73,7 @@ def contact():
     header = {
                 "title" : _('Contact me'),
                 "subtitle" : _('We are just one click away!'),
-                "image_path" : "contact-bg.jpg",
+                "image_path" : "contact_bg.jpg",
                 "needed" : True
     }
 
@@ -101,7 +101,7 @@ def login():
     header = {
                 "title" : 'Log in',
                 "subtitle" : 'Manage your posts',
-                "image_path" : "astronaut-bg.jpg",
+                "image_path" : "astronaut_bg.jpg",
                 "needed" : True
     }
 
@@ -167,7 +167,7 @@ def dashboard():
     header = {
                 "title" : "Admin page",
                 "subtitle" : "Manage your blog!",
-                "image_path" : "manage-bg.jpg",
+                "image_path" : "manage_bg.jpg",
                 "needed" : True,
                 "dashboard_flash" : True
     }
