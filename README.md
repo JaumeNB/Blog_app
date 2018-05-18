@@ -7,7 +7,7 @@
 - Edit blogposts
 - Delete blogposts
 - Admin page
-- Multilingual (currently spanish and italian)
+- Multilingual (currently spanish and english)
 
 # Usage:
 
