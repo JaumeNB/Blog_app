@@ -4,8 +4,8 @@ from datetime import datetime, date
 from flask_login import login_user, logout_user, current_user, login_required
 from collections import OrderedDict
 from flask_babel import _, get_locale
-from app.forms import LoginForm, PostForm
-from app.models import Blogpost, Editors, Messages, Logins
+from app.forms import LoginForm, PostForm, TagForm
+from app.models import Blogpost, Editors, Messages, Logins, Tags
 import os
 
 """-----------------ROUTES-----------------"""
@@ -202,7 +202,7 @@ def messages():
     header = {
                 "title" : "Admin page",
                 "subtitle" : "Manage your blog!",
-                "image_path" : "manage-bg.jpg",
+                "image_path" : "manage_bg.jpg",
                 "needed" : True,
                 "dashboard_flash" : True
     }
@@ -219,7 +219,7 @@ def add():
     header = {
                 "title" : "Admin page",
                 "subtitle" : "Manage your blog!",
-                "image_path" : "manage-bg.jpg",
+                "image_path" : "manage_bg.jpg",
                 "needed" : True,
                 "dashboard_flash" : True
     }
@@ -239,10 +239,17 @@ def add():
         title = form.title.data
         subtitle = form.subtitle.data
         author = form.author.data
+        tags = form.tags.data
         content = form.content.data
 
+        tags_objects = []
+        separated_tags = tags.split("-")
+        for separate_tag in separated_tags:
+            tag_to_add = Tags.query.filter_by(name = separate_tag).one()
+            tags_objects.append(tag_to_add)
+
         #write to DB
-        post = Blogpost(title = title, subtitle = subtitle, author = author, content = content, editor = editor)
+        post = Blogpost(title = title, subtitle = subtitle, author = author, content = content, editor = editor, tags = tags_objects)
         db.session.add(post)
         db.session.commit()
 
@@ -276,15 +283,33 @@ def manage():
     header = {
                 "title" : "Admin page",
                 "subtitle" : "Manage your blog!",
-                "image_path" : "manage-bg.jpg",
+                "image_path" : "manage_bg.jpg",
                 "needed" : True,
                 "dashboard_flash" : True
     }
 
     posts = Blogpost.query.order_by(Blogpost.date_posted.desc()).all()
+    tags = Tags.query.all()
+
+    form = TagForm()
+
+    #if post request to edit form and is validated
+    if form.validate_on_submit():
+        
+        app.logger.info('tag to be added')
+
+        tag = Tags(name = form.name.data)
+        db.session.add(tag)
+        db.session.commit()
+
+        #flash message, article has been updated
+        flash('tag uploaded', 'success')
+
+        #redirect
+        return redirect(url_for('manage'))
 
     #load template with articles
-    return render_template('manage.html', posts = posts, header = header)
+    return render_template('manage.html', posts = posts, header = header, tags = tags, form = form)
 
 """EDIT POST"""
 @app.route('/edit_post/<string:id>', methods=['GET', 'POST'])
@@ -295,7 +320,7 @@ def edit_post(id):
     header = {
                 "title" : "Admin page",
                 "subtitle" : "Manage your blog!",
-                "image_path" : "manage-bg.jpg",
+                "image_path" : "manage_bg.jpg",
                 "needed" : True,
                 "dashboard_flash" : True
     }
@@ -314,13 +339,21 @@ def edit_post(id):
         title = form.title.data
         subtitle = form.subtitle.data
         author = form.author.data
+        tags = form.tags.data
         content = form.content.data
+
+        tags_objects = []
+        separated_tags = tags.split("-")
+        for separate_tag in separated_tags:
+            tag_to_add = Tags.query.filter_by(name = separate_tag).one()
+            tags_objects.append(tag_to_add)
 
         #write to database
         post.title = title
         post.subtitle = subtitle
         post.author = author
         post.content = content
+        post.tags = tags_objects
         post.editor_id = editor.id
         db.session.commit()
 
@@ -344,6 +377,21 @@ def delete_post(id):
 
     #flash message
     flash('post deleted', 'success')
+
+    #redirect to dashboard
+    return redirect(url_for('manage'))
+
+"""DELETE_TAG"""
+@app.route('/delete_tag/<string:id>', methods=['POST'])
+@login_required
+def delete_tag(id):
+
+    tag_to_delete = Tags.query.filter_by(id = id).one()
+    db.session.delete(tag_to_delete)
+    db.session.commit()
+
+    #flash message
+    flash('tag deleted', 'success')
 
     #redirect to dashboard
     return redirect(url_for('manage'))

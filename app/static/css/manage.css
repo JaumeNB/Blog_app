@@ -66,3 +66,12 @@ table{
   border-bottom: 4px solid #990000;   /*set bottom border color*/
   color: #FFF;                        /*set font color*/
 }
+
+
+#tag_form{
+  padding-bottom: 15px
+}
+
+#tag_table{
+  display: table;
+}

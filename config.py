@@ -4,6 +4,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 #   export FLASK_APP=blogapp.py
 #   export FLASK_DEBUG=1
+#   export FLASK_ENV=development
 
 class Config(object):
 
@@ -15,6 +16,6 @@ class Config(object):
     CKEDITOR_FILE_UPLOADER = 'upload'
     UPLOADED_PATH = os.path.join(basedir, 'app/uploads')
     CKEDITOR_SERVE_LOCAL = True
-    CKEDITOR_HEIGHT = 600
+    CKEDITOR_HEIGHT = 300
     CKEDITOR_PKG_TYPE = 'full'
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')

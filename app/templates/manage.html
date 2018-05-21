@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% from "includes/_formhelpers.html" import render_field %}
 
 {% block body %}
 
@@ -16,13 +17,13 @@
   <div class="row">
     <div class="col-lg-12 col-md-12">
         <a class="btn btn-success" href="/add" id="add_button"> Add post </a>
-        <hr>
 
         <table class="table table-striped">
           <tr>
             <th>ID</th>
             <th>Title</th>
             <th>Subtitle</th>
+            <th>Tags</th>
             <th>Author</th>
             <th>Date Posted</th>
             <th></th>
@@ -34,6 +35,7 @@
               <td>{{post.id}}</td>
               <td>{{post.title[:40]+ '...'}}</td>
               <td>{{post.subtitle[:40] + '...'}}</td>
+              <td>{{post.tags|join(', ', attribute = 'name')}}</td>
               <td>{{post.author}}</td>
               <td>{{moment(post.date_posted).format('llll')}}</td>
               <!--<td>{{post.date_posted.strftime('%B %d, %Y - %H:%M:%S')}}</td>-->
@@ -48,7 +50,44 @@
           {% endfor %}
         </table>
 
-      </div>
-    </div>
-  </div>
+        <hr>
+
+        <div class="">
+          <form method="POST" action="" id="tag_form">
+            {{ form.hidden_tag() }}
+            {{form.name}}
+            <button class="btn btn-success" type="submit" value="Add Tag" id="add_tag_btn"> Add Tag </button>
+            {% if form.name.errors %}
+              <ul class=errors>
+              {% for error in form.name.errors %}
+                <span class="help-inline">{{ error }}</span>
+              {% endfor %}
+              </ul>
+            {% endif %}
+
+          </form>
+        </div>
+
+
+      <table class="table table-striped table-sm" id="tag_table">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+
+        {% for tag in tags %}
+          <tr>
+            <td>{{tag.id}}</td>
+            <td>{{tag.name}}</td>
+            <td>
+              <form action="{{url_for('delete_tag', id=tag.id)}}" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="DELETE" class="btn btn-danger" id="delete_button">
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+</div>
 {% endblock %}

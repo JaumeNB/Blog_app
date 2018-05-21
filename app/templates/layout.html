@@ -22,6 +22,9 @@ and all the templates will be modules in the body of this layout-->
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
+    <!-- Favicon: icon used by browsers for tabs and bookmarks -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
     {{ moment.include_jquery() }}
     {{ moment.include_moment() }}
     {{ moment.lang(g.locale) }}

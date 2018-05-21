@@ -1,5 +1,5 @@
 from app import app, db, cli
-from app.models import Blogpost, Editors, Messages, Logins
+from app.models import Blogpost, Editors, Messages, Logins, Tags
 
 #to use flask shell command when using the python interpreter
 #this way, all these modules are already imported
@@ -9,4 +9,6 @@ def make_shell_context():
             'Blogpost': Blogpost,
             'Editors': Editors,
             'Messages': Messages,
-            'Logins': Logins}
+            'Logins': Logins,
+            'Tags': Tags
+            }

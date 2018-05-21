@@ -6,6 +6,11 @@ from flask_login import UserMixin
 
 """-----------------DATABASE MODELS------------------"""
 
+#association table for many to many relationship
+posts_tags = db.Table('posts_tags',
+            db.Column('post_id', db.Integer, db.ForeignKey('blogpost.id')),
+            db.Column('tag_id', db.Integer, db.ForeignKey('tags.id')))
+
 class Blogpost(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
@@ -14,7 +19,9 @@ class Blogpost(db.Model):
     author = db.Column(db.String(64))
     date_posted = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     content = db.Column(db.Text)
+
     editor_id = db.Column(db.Integer, db.ForeignKey('editors.id')) #when creating pass editor=(Editors object)
+    tags = db.relationship('Tags', secondary = posts_tags, backref = db.backref('posts', lazy = 'dynamic'))
 
 class Editors(UserMixin, db.Model):
 
@@ -53,3 +60,8 @@ class Logins(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     editor_id = db.Column(db.Integer, db.ForeignKey('editors.id')) #when creating pass login=(Editors object)
+
+class Tags(db.Model):
+
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(64))

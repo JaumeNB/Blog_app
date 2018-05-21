@@ -34,22 +34,13 @@
         </div>
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
+            {{render_field(form.tags, class_="form-control", placeholder = "tags", value = form.tags.data|join('-', attribute = 'name') )}}
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
             {{render_field(form.content, id="editor", placeholder = "content")}}
           </div>
-          <!--<script>
-          /*
-            // Replace the <textarea id="editor1"> with a CKEditor
-            // instance, using default configuration.
-            CKEDITOR.replace( 'editor',{
-              height: '500',
-              extraPlugins: 'codesnippet',
-              codeSnippet_theme: 'monokai_sublime'//,
-              //codeSnippet_languages : {
-              //                            python: 'Python'
-              //                        }
-            } );
-            */
-          </script>-->
         </div>
         <br>
         <div class="form-group">
