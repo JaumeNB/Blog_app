@@ -27,9 +27,11 @@
 
                   <ul class="list-inline">
                   {% for tag in post.tags %}
-                    <li>
-                      <h5><span class="badge badge-info">{{tag.name}}</span></h5>
-                    </li>
+                    <a href="{{ url_for('post', post_id = post.id)}}">
+                      <li>
+                        <h5><span class="badge badge-info">{{tag.name}}</span></h5>
+                      </li>
+                    </a>
                     {% if tag != post.tags[-1]%}
                     <li>|</li>
                     {% endif %}

@@ -295,7 +295,7 @@ def manage():
 
     #if post request to edit form and is validated
     if form.validate_on_submit():
-        
+
         app.logger.info('tag to be added')
 
         tag = Tags(name = form.name.data)
