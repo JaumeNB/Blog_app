@@ -7,6 +7,7 @@ from flask_babel import _, get_locale
 from app.forms import LoginForm, PostForm, TagForm
 from app.models import Blogpost, Editors, Messages, Logins, Tags
 import os
+from operator import itemgetter
 
 """-----------------ROUTES-----------------"""
 
@@ -30,6 +31,15 @@ def index():
 
     page = request.args.get('page', 1, type=int)
 
+    tags = Tags.query.all()
+
+    unordered_tags_list = []
+    for tag in tags:
+        unordered_tags_list.append((tag, tag.posts.count()))
+    ordered_tags_list = sorted(unordered_tags_list, key=itemgetter(1), reverse = True)
+
+    ordered_tags = [i[0] for i in ordered_tags_list]
+
     posts = Blogpost.query.order_by(Blogpost.date_posted.desc()).paginate(
         page, app.config['POSTS_PER_PAGE'], True)
 
@@ -39,7 +49,7 @@ def index():
     prev_url = url_for('index', page=posts.prev_num) \
         if posts.has_prev else None
 
-    return render_template('index.html', posts = posts.items, header = header, next_url=next_url, prev_url=prev_url)
+    return render_template('index.html', posts = posts.items, header = header, next_url=next_url, prev_url=prev_url, tags = ordered_tags)
 
 """POSTS"""
 @app.route('/post/<int:post_id>')
@@ -65,6 +75,15 @@ def tag(tag_id):
                 "needed" : True
     }
 
+    tags = Tags.query.all()
+
+    unordered_tags_list = []
+    for tag in tags:
+        unordered_tags_list.append((tag, tag.posts.count()))
+    ordered_tags_list = sorted(unordered_tags_list, key=itemgetter(1), reverse = True)
+
+    ordered_tags = [i[0] for i in ordered_tags_list]
+
     page = request.args.get('page', 1, type=int)
 
     posts_by_tag = Blogpost.query.join(Blogpost.tags).\
@@ -77,7 +96,7 @@ def tag(tag_id):
     prev_url = url_for('tag',tag_id = tag_id, page=posts_by_tag.prev_num) \
         if posts_by_tag.has_prev else None
 
-    return render_template('posts_by_tag.html', posts_by_tag = posts_by_tag.items, header = header, next_url=next_url, prev_url=prev_url)
+    return render_template('posts_by_tag.html', posts_by_tag = posts_by_tag.items, header = header, next_url=next_url, prev_url=prev_url, tags = ordered_tags)
 
 """ABOUT"""
 @app.route('/about')

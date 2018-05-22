@@ -7,8 +7,9 @@
     <!-- Main Content -->
     <div class="container">
 
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="row justify-content-sm-center">
+        <div class="col-lg-7
+                    col-md-7" id="content_col">
 
           {% for post in posts %}
           <div class="well">
@@ -29,7 +30,7 @@
                   {% for tag in post.tags %}
                     <a href="{{ url_for('tag', tag_id = tag.id)}}">
                       <li>
-                        <h5><span class="badge badge-info">{{tag.name}}</span></h5>
+                        <h6><span class="badge badge-info">{{tag.name}}</span></h6>
                       </li>
                     </a>
                     {% if tag != post.tags[-1]%}
@@ -44,19 +45,44 @@
                     {{ _('on') }} {{moment(post.date_posted).format('LL')}}</p>
                 </div>
               </div>
-
             </div>
           </div>
-
-
           {% endfor %}
+        </div>
 
+        <div class="col-lg-3
+                    col-md-3" id="tag_col">
+
+          <!--
+          Search Widget
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-info" type="button">Go!</button>
+            </span>
+          </div>
+          -->
+          <h3>Categories</h3>
           <hr>
+          {% for tag in tags %}
+          <ul class="list-inline" id="tag_ul">
+            <li>
+              <a href="{{ url_for('tag', tag_id = tag.id)}}">
+                <h6><span class="badge badge-info">{{tag.name}}</span></h6>
+              </a>
+            </li>
+            <li>|</li>
+            <li>
+              <h6><span class="badge badge-info">{{tag.posts.count()}}</span></h6>
+            </li>
+          </ul>
+          {% endfor %}
         </div>
       </div>
 
       <div class="row">
-        <nav class="col-lg-8 col-md-10 mx-auto">
+        <nav class="col-lg-10 col-md-10 mx-auto">
+          <hr>
           <ul class="pagination">
             {% if prev_url %}
             <li class="page-item">
@@ -75,7 +101,6 @@
           </ul>
         </nav>
       </div>
-
     </div>
 
     {% endblock %}
