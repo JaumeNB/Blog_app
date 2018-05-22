@@ -18,12 +18,14 @@
   margin-top: 0px;
 }
 
-h2{
+#categories_h2{
   margin-top: 30px;
+  text-align: center;
 }
 
 #tag_ul{
   margin-bottom: 0px;
+  margin-left: 40px;
 }
 
 .pagination{
