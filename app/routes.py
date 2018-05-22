@@ -53,6 +53,32 @@ def post(post_id):
 
     return render_template('post.html', post = post, header = header)
 
+"""TAGS"""
+@app.route('/tag/<int:tag_id>')
+def tag(tag_id):
+
+
+    header = {
+                "title" : "The Self Engineer",
+                "subtitle" : _('A Blog for Makers'),
+                "image_path" : "index_bg.jpg",
+                "needed" : True
+    }
+
+    page = request.args.get('page', 1, type=int)
+
+    posts_by_tag = Blogpost.query.join(Blogpost.tags).\
+    filter_by(id = tag_id).order_by(Blogpost.date_posted.desc()).paginate(\
+    page, app.config['POSTS_PER_PAGE'], True)
+
+    next_url = url_for('tag',tag_id = tag_id, page=posts_by_tag.next_num) \
+        if posts_by_tag.has_next else None
+
+    prev_url = url_for('tag',tag_id = tag_id, page=posts_by_tag.prev_num) \
+        if posts_by_tag.has_prev else None
+
+    return render_template('posts_by_tag.html', posts_by_tag = posts_by_tag.items, header = header, next_url=next_url, prev_url=prev_url)
+
 """ABOUT"""
 @app.route('/about')
 def about():

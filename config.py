@@ -19,3 +19,4 @@ class Config(object):
     CKEDITOR_HEIGHT = 300
     CKEDITOR_PKG_TYPE = 'full'
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
+    HOST_NAME = '0.0.0.0:5000'
