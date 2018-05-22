@@ -15,7 +15,11 @@
 }
 
 #tag_col{
-  padding-top: 30px;
+  margin-top: 0px;
+}
+
+h2{
+  margin-top: 30px;
 }
 
 #tag_ul{
