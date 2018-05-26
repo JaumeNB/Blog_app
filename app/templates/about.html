@@ -7,26 +7,100 @@
 
     <!-- Main Content -->
     <div class="container">
+
       <div class="row">
+
         <!-- picture -->
         <div class="user-img">
           <img src='{{url_for('static', filename = 'img/profile.jpg')}}'>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <p>
-          My name is Jaume Nart Baron, I'm 25 and I'm an engineering student from Barcelona, Spain.
-          Since I was a little kid, I've been passionate about building stuff, tinkering pretty much everything and understanding how things work under the hood.
-          My main interests are artificial intelligence, IoT, data science and application development. I've built robots, 3D printers, mobile/web/desktop applications, IoT prototypes
-          and I do continue to do that in my free time.
-          This blog aims to order both my acquired knowledge throughout my engineering studies and my future projects in a clean way so they can be accessed later on if needed.
-          I would also like to contribute to the open-source community, share my knowledge with other makers and even inspire some beginners.
-          If you have any question or want to contact me, don't hesitate, I'll be very happy to answer.
-          </p>
+
+      <div class="row justify-content-sm-center" id="row_content">
+
+        <div class="col-md-2 scrollspy">
+          <div class="sidebar sticky">
+            <nav id="nav" class="nav nav-pills nav-stacked" >
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link" href="#me">About me</a>
+                <a class="nav-link" href="#the_blog">The blog</a>
+                <a class="nav-link" href="#professional">Professional</a>
+                <a class="nav-link" href="#resume">Resume</a>
+              </nav>
+            </nav>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-8" data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+
+          <div class="card text-center mb-4">
+            <div class="card-header" id="me">
+              About me
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">So you want to know a little bit more about me...</h5>
+              <p class="card-text">
+                Well, thanks then! My name is Jaume Nart Baron, and I'm from Barcelona, Spain.
+                Since I was a little kid, I've been passionate about building stuff,
+                tinkering pretty much everything and understanding how things work under the hood.
+                It was pretty obvious I would end up as an engineer, and so I did.
+              </p>
+              <blockquote class="blockquote text-center w-75 mb-0 mx-auto">
+                <p class="mb-0">I was originally supposed to become an engineer but the thought of having
+                  to expend my creative energy on things that make
+                  practical everyday life even more refined, with a loathsome capital gain as the goal, was unbearable to me.</p>
+                <footer class="blockquote-footer">Albert Einstein</footer>
+              </blockquote>
+              <p class="card-text">Isn't he right tough? Well, this blog aims to be the second drain of my creative energy
+              after my work.</p>
+            </div>
+
+            <div class="card-header card-footer" id="the_blog">
+              About this blog
+            </div>
+
+            <div class="card-body">
+              <h6 class="card-title">The Self-Engineer</h6>
+              <p class="card-text">
+                What is that? What is a self-engineer?
+                This name came up to me one day I realized that most of the knowledge I acquire comes from
+                the self-study, being the internet and the community living there the main source. Education is changing,
+                the knowledge shifted from schools and universities to a public source available to anyone called internet.
+                What I want to do with this blog is to contribute to this community with what I've learnt thanks to
+                the internet and make possible along with so many other bloggers that any person in the world
+                have the chance to learn anything just a computer.
+
+                Also, this is my technological repository, where I will store all my projects and knowledge acquired.
+              </p>
+            </div>
+
+              <div class="card-header card-footer" id="professional">
+                As a professional
+              </div>
+              <div class="card-body">
+              <h6 class="card-title">My experience</h6>
+                <p class="card-text">
+                  I left behind my student life 1 month ago. However I've already had my first work experiences.
+                  I've been an intern in Procter & Gamble as an engineering project manager.
+                  Now I'm doing an internship in Amazon as a robotics engineer.
+                  If you want to have more details about my studies and career, below you'll find
+                  attached my resume.
+                </p>
+              </div>
+
+              <div class="card-header card-footer" id="resume">
+                My resume
+              </div>
+              <div class="card-body">
+                <a href="#" class="card-link">Click here to download my resume</a>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <hr>
+  </div>
+  <hr>
+
 
     {% endblock %}
