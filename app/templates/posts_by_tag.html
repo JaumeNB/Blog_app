@@ -30,7 +30,7 @@
                   {% for tag in post.tags %}
                     <a href="{{ url_for('tag', tag_id = tag.id)}}">
                       <li>
-                        <h5><span class="badge badge-info">{{tag.name}}</span></h5>
+                        <h6><span class="badge badge-info">{{tag.name}}</span></h6>
                       </li>
                     </a>
                     {% if tag != post.tags[-1]%}
