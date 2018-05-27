@@ -2,10 +2,6 @@
   z-index: 1;
 }
 
-body {
-      position: relative;
-  }
-
 .user-img{
   margin-top: -200px;
   display: block;
@@ -26,8 +22,20 @@ p{
   margin-top: 0;
 }
 
+
 #row_content{
   margin-top: 20px;
+}
+
+.card-title{
+  text-align: center;
+  font-weight:normal;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.card-text{
+  text-align: justify;
 }
 
 .blockquote-footer{
@@ -36,13 +44,20 @@ p{
 }
 
 .sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
 }
 
 .sticky:before,
 .sticky:after {
     content: '';
     display: table;
+}
+
+#media_picture{
+  border-radius: 50%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 30px;
 }

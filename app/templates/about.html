@@ -38,11 +38,12 @@
               About me
             </div>
             <div class="card-body">
-              <h5 class="card-title">So you want to know a little bit more about me...</h5>
+              <em><h4 class="card-title">So you want to know a bit more about me...</h4></em>
               <p class="card-text">
-                Well, thanks then! My name is Jaume Nart Baron, and I'm from Barcelona, Spain.
-                Since I was a little kid, I've been passionate about building stuff,
-                tinkering pretty much everything and understanding how things work under the hood.
+                Well, thanks for the interest!
+                My name is Jaume Nart Baron and I'm from Barcelona, Spain.
+                Since I was a little kid, I've been passionate about <em>building</em> stuff,
+                <em>tinkering</em> pretty much everything and <em>understanding</em> how things work under the hood.
                 It was pretty obvious I would end up as an engineer, and so I did.
               </p>
               <blockquote class="blockquote text-center w-75 mb-0 mx-auto">
@@ -51,8 +52,48 @@
                   practical everyday life even more refined, with a loathsome capital gain as the goal, was unbearable to me.</p>
                 <footer class="blockquote-footer">Albert Einstein</footer>
               </blockquote>
-              <p class="card-text">Isn't he right tough? Well, this blog aims to be the second drain of my creative energy
-              after my work.</p>
+              <p class="card-text">Isn't he right tough? Well, this blog aims to be the main drain of my creative energy.
+              Here I will post all my technology-related projects, explained step-by-step so anyone can replicate them
+              and learn. My main interests are Internet of Things, Artificial Intelligence and Mechatronics.</p>
+              <em><h4 class="card-title">I like to do other things though</h4></em>
+              <br>
+              <!-- Left-aligned -->
+              <div class="media">
+                <img src='{{url_for('static', filename = 'img/about_travel.jpg')}}' class="align-self-center mr-3" id="media_picture">
+                <div class="media-body">
+                  <em><h4 class="media-heading">Travel the world</h4></em>
+                  <p>Get to know other cultures, speak other languages, meet new people are things are deeply enjoy.
+                  I've had the opportunity to live in Italy, France, Poland and Belgium and the list will probably
+                  get larger. I speak fluently 5 languages and I have friends from all over the world.</p>
+                </div>
+              </div>
+              <br>
+
+              <!-- Right-aligned -->
+              <div class="media">
+
+                <div class="media-body">
+                  <em><h4 class="media-heading">Train the mind and the body</h4></em>
+                  <p>I've always been a sports person. I've been playing basketball since I was 10 years old.
+                  I can't number all the values and principles that this fantastic sport has taught me.
+                  Wherever I may travel, basketball will follow.</p>
+                </div>
+                <img src='{{url_for('static', filename = 'img/about_basket.jpg')}}' class="align-self-center ml-3" id="media_picture">
+              </div>
+              <br>
+
+              <!-- Left-aligned -->
+              <div class="media">
+                <img src='{{url_for('static', filename = 'img/about_guitar.jpg')}}' class="align-self-center mr-3" id="media_picture">
+                <div class="media-body">
+                  <em><h4 class="media-heading">Feel the music</h4></em>
+                  <p>Find three hobbies you love: One to make you money, one to keep you in shape, and one to be creative.
+                  Me and my guitar, we are an inseparable pack. I also sing but just for me, because I'm actually fairly bad.
+                  </p>
+                </div>
+              </div>
+
+
             </div>
 
             <div class="card-header card-footer" id="the_blog">
@@ -60,17 +101,16 @@
             </div>
 
             <div class="card-body">
-              <h5 class="card-title">The Self-Engineer</h5>
+              <em><h4 class="card-title">The Self-Engineer</h4></em>
               <p class="card-text">
-                What is that? What is a self-engineer?
+                What is that? What is a self-engineer? It is basically the <em>DIY approach</em> to learning, building and
+                getting things done. <br>
                 This name came up to me one day I realized that most of the knowledge I acquire comes from
-                the self-study, being the internet and the community living there the main source. Education is changing,
-                the knowledge shifted from schools and universities to a public source available to anyone called internet.
-                What I want to do with this blog is to contribute to this community with what I've learnt thanks to
-                the internet and make possible along with so many other bloggers that any person in the world
-                have the chance to learn anything just a computer.
-
-                Also, this is my technological repository, where I will store all my projects and knowledge acquired.
+                the self-study, being the internet and the community living there the main source.
+                <br>Education is changing, the knowledge shifted from schools and universities to a public source available to anyone called internet.
+                There are tons of people sharing knowledge, enabling others to learn and making the internet the new land of opportunities.
+                That I want to do with this blog is to contribute to this community.
+                In the future, a computer will be the greatest expression of freedom.
               </p>
             </div>
 
@@ -80,9 +120,10 @@
               <div class="card-body">
               <h5 class="card-title">My experience</h5>
                 <p class="card-text">
-                  I left behind my student life 1 month ago. However I've already had my first work experiences.
-                  I've been an intern in Procter & Gamble as an engineering project manager.
-                  Now I'm doing an internship in Amazon as a robotics engineer.
+                  During my engineering studies, I have had few work experiences as an intern.
+                  My most rewarding professional experience so far has been in Procter & Gamble
+                  where I worked as an engineering project manager in Brussels, Belgium.
+                  Now I'm heading to Italy, near Milan, to do an internship in Amazon as a robotics engineer.
                   If you want to have more details about my studies and career, below you'll find
                   attached my resume.
                 </p>
@@ -92,9 +133,8 @@
                 My resume
               </div>
               <div class="card-body">
-                <a href="/resume" class="card-link">Click here to download my resume</a>
+                <a href="/resume" class="card-link">Click here to download my resume in PDF</a>
               </div>
-
             </div>
           </div>
         </div>
