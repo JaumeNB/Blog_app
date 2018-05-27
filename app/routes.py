@@ -184,10 +184,8 @@ def login():
         #flash message
         flash('you are now logged in', 'success')
 
-        next_page = request.args.get('next')
-        if not next_page or url_parse(next_page).netloc != '':
-            next_page = url_for('dashboard')
-        return redirect(next_page)
+        #go to dashboard
+        return redirect(url_for('dashboard'))
 
     #load login template
     return render_template ('login.html', form = form, header = header)
@@ -308,6 +306,7 @@ def add():
 
 """UPLOAD AN IMAGE TO THE SERVER"""
 @app.route('/files/<filename>')
+@login_required
 def files(filename):
 	path = app.config['UPLOADED_PATH']
 	return send_from_directory(path, filename)
@@ -319,6 +318,12 @@ def upload():
 	f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
 	url = url_for('files', filename=f.filename)
 	return url
+
+"""GET THE RESUME"""
+@app.route('/resume')
+def resume():
+	path = app.config['UPLOADED_PATH']
+	return send_from_directory(path, 'resume.pdf')
 
 """MANAGE"""
 @app.route('/manage', methods = ['GET', 'POST'])
