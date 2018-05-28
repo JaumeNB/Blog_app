@@ -306,7 +306,6 @@ def add():
 
 """UPLOAD AN IMAGE TO THE SERVER"""
 @app.route('/files/<filename>')
-@login_required
 def files(filename):
 	path = app.config['UPLOADED_PATH']
 	return send_from_directory(path, filename)
