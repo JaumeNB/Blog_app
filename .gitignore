@@ -4,6 +4,7 @@
 /app/uploads/*.jpg
 /app/uploads/*.pdf
 /app/static/img/*.jpg
+/app/static/img/*.gif
 /logs
 /certs
 *.pyc
