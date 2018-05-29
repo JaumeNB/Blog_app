@@ -104,7 +104,7 @@ def about():
 
     header = {
                 "title" : _('About Me'),
-                "subtitle" : _('This is what I do.'),
+                "subtitle" : _('This is what I do'),
                 "image_path" : "about_bg.jpg",
                 "needed" : True
     }

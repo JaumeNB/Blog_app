@@ -56,7 +56,13 @@ p{
 }
 
 #media_picture{
-  border-radius: 50%;
+  border-radius:30%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+#python_logo{
   max-width: 150px;
   height: auto;
   margin-bottom: 30px;
