@@ -10,7 +10,6 @@ from flask_login import LoginManager                #logging in
 from logging.handlers import RotatingFileHandler    #error logging
 import logging                                      #error logging
 from flask_moment import Moment                     #format dates, supports several languages
-from flask_babel import Babel, lazy_gettext as _l   #translation
 from flask_ckeditor import CKEditor                 #rich text editor
 
 """-----------------FLASK APP INITIALIZATION-----------------"""
@@ -20,7 +19,7 @@ app = Flask(__name__)
 """FLASK LOGIN"""
 login = LoginManager(app)
 login.login_view = 'login'
-login.login_message = _l('Please log in to access this page.')
+login.login_message = 'Please log in to access this page.'
 
 """CONFIGURATION FILE"""
 app.config.from_object(Config)
@@ -43,9 +42,6 @@ migrate = Migrate(app, db)
 """TIME FORMAT HANDLING"""
 moment = Moment(app)
 
-"""SUPPORT FOR MULTIPLE LANGUAGES"""
-babel = Babel(app)
-
 """SUPPORT CKEDITOR"""
 ckeditor = CKEditor(app)
 
@@ -64,10 +60,6 @@ if not app.debug:
     app.logger.setLevel(logging.INFO)
     app.logger.info('blogapp startup')
 
-"""MATCH CLIENT PREFERED LANGUAGE TO SUPPORTED LANGUAGES"""
-@babel.localeselector
-def get_locale():
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 """IMPORTS TO AVOID CATCH 22 IMPORT ISSUE"""
 from app import routes, models, errors

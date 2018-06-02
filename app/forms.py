@@ -1,7 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, FieldList
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
-from flask_babel import _, lazy_gettext as _l
 from flask_ckeditor import CKEditorField
 from app.models import Editors, Tags
 from app import app
@@ -44,13 +43,13 @@ class PostForm(FlaskForm):
 #LOGIN FORM CLASS
 class LoginForm(FlaskForm):
 
-    username = StringField (_l('Username'), validators=[DataRequired()])
-    password = PasswordField (_l('Password'), validators=[DataRequired()])
+    username = StringField ('Username', validators=[DataRequired()])
+    password = PasswordField ('Password', validators=[DataRequired()])
 
 #TAB FORM CLASS
 class TagForm(FlaskForm):
 
-    name = StringField (_l('Name'), validators=[DataRequired()])
+    name = StringField ('Name', validators=[DataRequired()])
 
     def validate_name(self, name):
 

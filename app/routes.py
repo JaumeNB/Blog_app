@@ -3,19 +3,12 @@ from flask import render_template, request, redirect, url_for, session, flash, M
 from datetime import datetime, date
 from flask_login import login_user, logout_user, current_user, login_required
 from collections import OrderedDict
-from flask_babel import _, get_locale
 from app.forms import LoginForm, PostForm, TagForm
 from app.models import Blogpost, Editors, Messages, Logins, Tags
 import os
 from operator import itemgetter
 
 """-----------------ROUTES-----------------"""
-
-"""decorator executed before every view request"""
-@app.before_request
-def before_request():
-    #returns the selected language and locale for a given request
-    g.locale = str(get_locale())
 
 """Documents used for google to crawl this website and make it indexable"""
 @app.route('/robots.txt')
@@ -30,7 +23,7 @@ def index():
 
     header = {
                 "title" : "The Self Engineer",
-                "subtitle" : _('A Blog for Makers'),
+                "subtitle" : 'A Blog for Makers',
                 "image_path" : "index_bg.jpg",
                 "needed" : True
     }
@@ -76,7 +69,7 @@ def tag(tag_id):
 
     header = {
                 "title" : "The Self Engineer",
-                "subtitle" : _('A Blog for Makers'),
+                "subtitle" : 'A Blog for Makers',
                 "image_path" : "index_bg.jpg",
                 "needed" : True
     }
@@ -109,8 +102,8 @@ def tag(tag_id):
 def about():
 
     header = {
-                "title" : _('About Me'),
-                "subtitle" : _('This is what I do'),
+                "title" : 'About Me',
+                "subtitle" : 'This is what I do',
                 "image_path" : "about_bg.jpg",
                 "needed" : True
     }
@@ -122,8 +115,8 @@ def about():
 def contact():
 
     header = {
-                "title" : _('Contact me'),
-                "subtitle" : _('We are just one click away!'),
+                "title" : 'Contact me',
+                "subtitle" : 'We are just one click away!',
                 "image_path" : "contact_bg.jpg",
                 "needed" : True
     }

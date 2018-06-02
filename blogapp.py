@@ -1,4 +1,4 @@
-from app import app, db, cli
+from app import app, db
 from app.models import Blogpost, Editors, Messages, Logins, Tags
 
 #to use flask shell command when using the python interpreter

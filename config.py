@@ -11,7 +11,6 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = 'sqlite:////%s' % os.path.join(APP_DIR, 'DB/blog.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     POSTS_PER_PAGE = 5
-    LANGUAGES = ['en', 'es']
     SECRET_KEY = 'supercalifragilisticoespialidoso'
     CKEDITOR_FILE_UPLOADER = 'upload'
     UPLOADED_PATH = os.path.join(basedir, 'app/uploads')

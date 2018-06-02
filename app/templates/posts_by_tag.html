@@ -40,9 +40,9 @@
                   </ul>
 
 
-                  <p class="post-meta">{{ _('Posted by') }}
+                  <p class="post-meta">{{ 'Posted by' }}
                     <a href="{{ url_for('about')}}">{{ post.author }}</a>
-                    {{ _('on') }} {{moment(post.date_posted).format('LL')}}</p>
+                    {{ 'on' }} {{moment(post.date_posted).format('LL')}}</p>
                 </div>
               </div>
             </div>
@@ -79,14 +79,14 @@
             {% else %}
             <li class="page-item disabled">
             {% endif %}
-              <a class="page-link" href="{{ prev_url }}" tabindex="-1">{{_('Previous')}}</a>
+              <a class="page-link" href="{{ prev_url }}" tabindex="-1">{{'Previous'}}</a>
             </li>
             {% if next_url %}
             <li class="page-item">
             {% else %}
             <li class="page-item disabled">
             {% endif %}
-              <a class="page-link" href="{{ next_url }}">{{_('Next')}}</a>
+              <a class="page-link" href="{{ next_url }}">{{'Next'}}</a>
             </li>
           </ul>
         </nav>

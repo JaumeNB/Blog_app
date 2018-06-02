@@ -2,12 +2,11 @@
 
 # Main functionalities:
 
-- Create blogposts with a rich editor (CKEditor) and upload pictures/GIFs
+- Create blogposts with a rich editor (CKEditor) and upload pictures/GIFs on local drive
 - Save blogposts to DB with SQLAlchemy (SQLite, MySQL or PostgreSQL engines)
 - Edit blogposts
 - Delete blogposts
 - Admin page
-- Multilingual (currently spanish and english)
 
 # Usage:
 
@@ -22,7 +21,7 @@
 - install gunicorn (pip install gunicorn)
 - set environment variable to be registered every time login is made (echo "export FLASK_APP=blogapp.py" >> ~/.profile)
 - set up gunicorn (web server to run privately) and supervisor (server monitoring) ==> generate file /etc/supervisor/conf.d/blogapp.conf
-- set up nginx (web server to run publicly) ==> generate file /etc/nginx/sites-enabled/blogapp and add SSL certificate 
+- set up nginx (web server to run publicly) ==> generate file /etc/nginx/sites-enabled/blogapp and add SSL certificate
 - set up firewall(sudo ufw allow ssh, sudo ufw allow http, sudo ufw allow 443/tcp, sudo ufw --force enable)
 - reload supervisor service (sudo supervisorctl reload)
 - reload nginx service (sudo service nginx reload)
