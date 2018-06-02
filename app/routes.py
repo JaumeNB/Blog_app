@@ -17,6 +17,12 @@ def before_request():
     #returns the selected language and locale for a given request
     g.locale = str(get_locale())
 
+"""Documents used for google to crawl this website and make it indexable"""
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
+
 """INDEX"""
 @app.route('/')
 @app.route('/index')
