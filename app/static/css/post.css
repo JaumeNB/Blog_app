@@ -7,3 +7,8 @@ img{
   display: inline-block;
   vertical-align: middle;
 }
+
+#social_share{
+  margin-top: 25px;
+  margin-bottom: 9px;
+}
