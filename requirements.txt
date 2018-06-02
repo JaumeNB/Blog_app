@@ -1,7 +1,6 @@
 alembic==0.9.9
 click==6.7
 Flask==1.0.2
-flask_babel==0.11.2
 flask_ckeditor==0.3.3
 flask_login==0.4.1
 flask_migrate==2.1.1
