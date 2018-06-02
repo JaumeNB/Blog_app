@@ -9,6 +9,10 @@ img{
 }
 
 #social_share{
-  margin-top: 25px;
-  margin-bottom: 9px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+#hr_end{
+  margin-top: 0px;
 }
