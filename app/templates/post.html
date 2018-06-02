@@ -5,6 +5,7 @@
     <!-- Load code snippets CSS theme -->
     {{ ckeditor.load_code_theme() }}
 
+    <!-- Load CSS-->
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/post.css') }}">
 
     <!-- Page Header -->
@@ -16,9 +17,14 @@
             <div class="post-heading">
               <h1>{{ post.title }}</h1>
               <h2 class="subheading">{{ post.subtitle }}</h2>
-              <span class="meta">Posted by
-                {{ post.author }}
-                on {{post.date_posted.strftime('%B %d, %Y')}} </span>
+              <ul class="list-inline">
+                <li><span class="meta">Posted by
+                  {{ post.author }}
+                  on {{post.date_posted.strftime('%B %d, %Y')}}</span></li>
+                <li>|</li>
+                <li>{% include 'includes/_social_share.html' %}</li>
+              </ul>
+
             </div>
           </div>
         </div>
@@ -34,9 +40,21 @@
           </div>
         </div>
       </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto mb-4">
+            {% include 'includes/_social_share.html' %}
+          </div>
+        </div>
+      </div>
     </article>
 
     <hr>
+
+
+
+
 
     <script>
     $("p img").unwrap();

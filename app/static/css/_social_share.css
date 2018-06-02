@@ -1,0 +1,13 @@
+.social-bar {
+    margin: 0px 0px 0px 0px;
+}
+.social-bar tr {
+    height: 26px;
+}
+.social-bar td {
+    margin-right: 8px;
+}
+.social-box {
+    text-align: center;
+    padding: 3px;
+}

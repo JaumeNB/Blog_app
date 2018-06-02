@@ -22,7 +22,7 @@ def static_from_root():
 def index():
 
     header = {
-                "title" : "The Self Engineer",
+                "title" : "The Self-Engineer",
                 "subtitle" : 'A Blog for Makers',
                 "image_path" : "index_bg.jpg",
                 "needed" : True

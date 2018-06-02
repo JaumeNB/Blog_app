@@ -35,12 +35,11 @@
                 {% endif %}
               {% endfor %}
               </ul>
-
-
               <p class="post-meta">{{ 'Posted by' }}
                 <a href="{{ url_for('about')}}">{{ post.author }}</a>
                 {{ 'on' }} {{moment(post.date_posted).format('LL')}}</p>
             </div>
+
 
           {% endfor %}
         </div>

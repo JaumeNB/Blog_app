@@ -1,0 +1,15 @@
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/_social_share.css') }}">
+
+<!-- linkedin sdk -->
+<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+<!-- twitter sdk -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<div class="social-bar">
+  <table>
+      <tr>
+          <td><div class="social-box" style="padding-top: 8px;"><a href="https://twitter.com/share" class="twitter-share-button" data-url={{ request.url }} data-via="theselfengineer">Tweet</a></div></td>
+          <td><div class="social-box" style="padding-top: 8px;"><script type="IN/Share" data-url={{ request.url }}></script></div></td>
+      </tr>
+  </table>
+</div>
