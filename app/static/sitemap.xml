@@ -9,78 +9,83 @@
 
 <url>
   <loc>http://www.theselfengineer.com/</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>http://www.theselfengineer.com/index</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.theselfengineer.com/about</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.theselfengineer.com/contact</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.theselfengineer.com/post/6</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <loc>http://www.theselfengineer.com/post/Visualize-IoT-sensor-data-in-real-time-at-cost-0</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.theselfengineer.com/tag/5</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <loc>http://www.theselfengineer.com/tag/Arduino</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.theselfengineer.com/tag/7</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <loc>http://www.theselfengineer.com/tag/Internet-of-Things</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.theselfengineer.com/tag/10</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <loc>http://www.theselfengineer.com/tag/NodeRED</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.theselfengineer.com/tag/9</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <loc>http://www.theselfengineer.com/tag/InfluxDB</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.theselfengineer.com/tag/8</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <loc>http://www.theselfengineer.com/tag/Grafana</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.theselfengineer.com/post/5</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <loc>http://www.theselfengineer.com/post/Getting-started-with-InfluxDB-and-Grafana</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.theselfengineer.com/post/4</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <loc>http://www.theselfengineer.com/post/Getting-started-with-NodeRED</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.theselfengineer.com/post/3</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <loc>http://www.theselfengineer.com/post/Getting-started-with-Arduino</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.theselfengineer.com/post/1</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <loc>http://www.theselfengineer.com/post/Linux-commands-cheat-sheet</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.theselfengineer.com/tag/4</loc>
-  <lastmod>2018-06-02T11:12:04+00:00</lastmod>
+  <loc>http://www.theselfengineer.com/tag/Linux</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.theselfengineer.com/tag/None</loc>
+  <lastmod>2018-06-03T13:15:26+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
