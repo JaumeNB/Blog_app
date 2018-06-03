@@ -16,7 +16,7 @@
             <div class="media">
               <div class="media-body">
                 <div class="post-preview">
-                  <a href="{{ url_for('post', post_id = post.id)}}">
+                  <a href="{{ url_for('post', post_title = '-'.join(post.title.split()) )}}">
                     <h2 class="post-title">
                       {{ post.title }}
                     </h2>
@@ -28,7 +28,7 @@
 
                   <ul class="list-inline">
                   {% for tag in post.tags %}
-                    <a href="{{ url_for('tag', tag_id = tag.id)}}">
+                    <a href="{{ url_for('tag', tag_name = '-'.join(tag.name.split()) )}}">
                       <li>
                         <h6><span class="badge badge-info">{{tag.name}}</span></h6>
                       </li>
@@ -57,7 +57,7 @@
           {% for tag in tags %}
           <ul class="list-inline" id="tag_ul">
             <li>
-              <a href="{{ url_for('tag', tag_id = tag.id)}}">
+              <a href="{{ url_for('tag', tag_name = '-'.join(tag.name.split()) )}}">
                 <h6><span class="badge badge-info">{{tag.name}}</span></h6>
               </a>
             </li>

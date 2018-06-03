@@ -51,21 +51,24 @@ def index():
     return render_template('index.html', posts = posts.items, header = header, next_url=next_url, prev_url=prev_url, tags = ordered_tags)
 
 """POSTS"""
-@app.route('/post/<int:post_id>')
-def post(post_id):
+@app.route('/post/<string:post_title>')
+def post(post_title):
+
+    post_title_processed = ' '.join(post_title.split('-'))
 
     header = {
                 "needed" : False
     }
 
-    post = Blogpost.query.filter_by(id = post_id).one()
+    post = Blogpost.query.filter_by(title = post_title_processed).one()
 
     return render_template('post.html', post = post, header = header)
 
 """TAGS"""
-@app.route('/tag/<int:tag_id>')
-def tag(tag_id):
+@app.route('/tag/<string:tag_name>')
+def tag(tag_name):
 
+    tag_name_processed = ' '.join(tag_name.split('-'))
 
     header = {
                 "title" : "The Self Engineer",
@@ -86,13 +89,13 @@ def tag(tag_id):
     page = request.args.get('page', 1, type=int)
 
     posts_by_tag = Blogpost.query.join(Blogpost.tags).\
-    filter_by(id = tag_id).order_by(Blogpost.date_posted.desc()).paginate(\
+    filter_by(name = tag_name_processed).order_by(Blogpost.date_posted.desc()).paginate(\
     page, app.config['POSTS_PER_PAGE'], True)
 
-    next_url = url_for('tag',tag_id = tag_id, page=posts_by_tag.next_num) \
+    next_url = url_for('tag',tag_name = tag_name_processed, page=posts_by_tag.next_num) \
         if posts_by_tag.has_next else None
 
-    prev_url = url_for('tag',tag_id = tag_id, page=posts_by_tag.prev_num) \
+    prev_url = url_for('tag',tag_name = tag_name_processed, page=posts_by_tag.prev_num) \
         if posts_by_tag.has_prev else None
 
     return render_template('posts_by_tag.html', posts_by_tag = posts_by_tag.items, header = header, next_url=next_url, prev_url=prev_url, tags = ordered_tags)
