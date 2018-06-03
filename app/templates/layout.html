@@ -2,7 +2,7 @@
 <!-- modular approach in which layout is the common part
 and all the templates will be modules in the body of this layout-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 
   <head>
 
@@ -35,17 +35,16 @@ and all the templates will be modules in the body of this layout-->
     <!-- meta tags -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property='og:title' content="The Self-Engineer - A blog for makers">
     <meta name="og:description" content="A tech blog for makers, engineers and hobbyists who are
-    interested on Internet of Things, Robotics and Machine Learning.">
+                                        interested on Internet of Things, Robotics and Machine Learning.">
     <meta property="og:image" content="{{ url_for('static', filename='img/web_social.jpg') }}">
-    <meta property="submitted-url" content="http://www.theselfengineer.com">
-    <meta property="submitted-image-url" content="{{ url_for('static', filename='img/web_social.jpg') }}">
+    <meta property="og-url" content="http://www.theselfengineer.com">
     <meta name="copyright" content="Copyright (c) 2018 www.theselfengineer.com">
   	<meta name="author" content="Jaume Nart Baron">
     <meta name="keywords" content="Internet of Things, Electronics, Prototyping, Robotics,
                                     Machine Learning, Computer Vision, Deep Learning, Arduino,
                                     Raspberry Pi, Open Source">
-
 
     <!-- Title -->
     <title>The Self-Engineer - A blog for makers</title>
