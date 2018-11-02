@@ -1,1 +1,1 @@
-# Here the database: blog.db
+Placeholder for the database: blog.db
