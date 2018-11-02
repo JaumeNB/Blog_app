@@ -1,1 +1,1 @@
-# Here the migration versions (.py)
+Here the migration versions (.py)
