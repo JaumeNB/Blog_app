@@ -1,1 +1,1 @@
-Here the templates pictures
+Here the application's template pictures
